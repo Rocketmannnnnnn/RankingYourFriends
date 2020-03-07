@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView jokeTv;
     private Button playButton;
     private Button editButton;
 
@@ -22,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.jokeTv = findViewById(R.id.jokeTextView);
         this.playButton = findViewById(R.id.playButton);
         this.editButton = findViewById(R.id.editButton);
 
