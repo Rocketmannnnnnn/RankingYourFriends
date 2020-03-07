@@ -3,4 +3,6 @@
     <string name="app_name">Ranking Your Friends</string>
     <string name="Play">Speel</string>
     <string name="Edit">Bewerk</string>
+    <string name="Next">Volgende</string>
+    <string name="Previous">Vorige</string>
 </resources>
