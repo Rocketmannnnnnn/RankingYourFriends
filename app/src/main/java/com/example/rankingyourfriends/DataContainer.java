@@ -37,6 +37,11 @@ public class DataContainer {
         this.obj.getJSONArray(customArrayName).put(question);
     }
 
+    public void removeQuestion(int pos) throws JSONException {
+        this.customQuestions.remove(pos);
+        this.obj.getJSONArray(customArrayName).remove(pos);
+    }
+
     public void init(String defaultArrayName, String customArrayName){
         this.defaultArrayName = defaultArrayName;
         this.customArrayName = customArrayName;

@@ -1,5 +1,6 @@
 package com.example.rankingyourfriends;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,10 @@ public class CustomQuestionsAdapter extends RecyclerView.Adapter<CustomQuestions
             this.questionText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //TODO go to delete activity
+                    Intent intent = new Intent(view.getContext(), DeleteActivity.class);
+                    int pos = CQViewHolder.super.getAdapterPosition();
+                    intent.putExtra("DELETE", pos);
+                    view.getContext().startActivity(intent);
                 }
             });
         }

@@ -37,9 +37,10 @@ public class EditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String question = newQuestion.getText().toString();
-                if(!DataContainer.getInstance().getCustomQuestions().contains(question)){
+                if(!DataContainer.getInstance().getCustomQuestions().contains(question) && !question.trim().isEmpty()){
                     Save(question);
                     adapter.notifyDataSetChanged();
+                    newQuestion.setText("");
                 }
             }
         });

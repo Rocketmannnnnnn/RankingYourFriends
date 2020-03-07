@@ -9,4 +9,7 @@
     <string name="DEFAULTQUESTIONS" translatable="false">DEFAULTQUESTIONS</string>
     <string name="CUSTOMQUESTIONS" translatable="false">CUSTOMQUESTIONS</string>
     <string name="QUESTIONS" translatable="false">QUESTIONS</string>
+    <string name="DeleteText">"Are you sure you want to delete: "</string>
+    <string name="Confirm">Confirm</string>
+    <string name="DeleteSuccesfull">Delete succesfull</string>
 </resources>

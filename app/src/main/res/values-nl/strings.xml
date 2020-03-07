@@ -7,4 +7,7 @@
     <string name="Previous">Vorige</string>
     <string name="AddQuestion">Voeg nieuwe vraag  toe</string>
     <string name="Add">Toevoegen</string>
+    <string name="DeleteText">"Weet je zeker dat je deze wilt verwijderen: "</string>
+    <string name="Confirm">Bevestig</string>
+    <string name="DeleteSuccesfull">Succesvol verwijderd</string>
 </resources>
