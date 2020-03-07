@@ -6,4 +6,6 @@
     <string name="Previous">Previous</string>
     <string name="AddQuestion">Add new question</string>
     <string name="Add">Add</string>
+    <string name="DEFAULTQUESTIONS" translatable="false">DEFAULTQUESTIONS</string>
+    <string name="CUSTOMQUESTIONS" translatable="false">CUSTOMQUESTIONS</string>
 </resources>

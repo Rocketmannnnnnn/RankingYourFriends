@@ -2,12 +2,18 @@ package com.example.rankingyourfriends;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,5 +45,17 @@ public class MainActivity extends AppCompatActivity {
                 view.getContext().startActivity(i);
             }
         });
+
+        initDataContainer();
+    }
+
+    private void initDataContainer(){
+        DataContainer dc = DataContainer.getInstance();
+        dc.init(getResources().getString(R.string.DEFAULTQUESTIONS), getResources().getString(R.string.CUSTOMQUESTIONS));
+
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String questions = sharedPref.getString("questions", dc.getDefaultString());
+
+        dc.fillData(questions);
     }
 }

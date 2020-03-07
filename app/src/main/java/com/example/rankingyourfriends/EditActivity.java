@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +24,7 @@ public class EditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
 
         this.newQuestion = findViewById(R.id.newQuestionEditText);
-        this.adapter = new CustomQuestionsAdapter(DataContainer.getInstance().getQuestions());
+        this.adapter = new CustomQuestionsAdapter(DataContainer.getInstance().getCustomQuestions());
         this.recyclerView = findViewById(R.id.questionsRecyclerView);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         this.recyclerView.setAdapter(this.adapter);
@@ -32,9 +34,9 @@ public class EditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String question = newQuestion.getText().toString();
-                if(!DataContainer.getInstance().getQuestions().contains(question)){
+                if(!DataContainer.getInstance().getCustomQuestions().contains(question)){
                     DataContainer.getInstance().AddQuestion(question);
-                    //TODO add question to SQLite
+                    //TODO add question to Sharedperfs
                     adapter.notifyDataSetChanged();
                 }
             }
