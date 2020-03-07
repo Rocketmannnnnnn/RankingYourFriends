@@ -3,18 +3,12 @@ package com.example.rankingyourfriends;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
-public class Questions extends AppCompatActivity {
-
-    private TextView question;
+public class RowItem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questions);
-
-        this.question = findViewById(R.id.questionTextView);
-        
+        setContentView(R.layout.activity_row_item);
     }
 }

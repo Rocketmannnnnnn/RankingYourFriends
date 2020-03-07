@@ -5,4 +5,6 @@
     <string name="Edit">Bewerk</string>
     <string name="Next">Volgende</string>
     <string name="Previous">Vorige</string>
+    <string name="AddQuestion">Voeg nieuwe vraag  toe</string>
+    <string name="Add">Toevoegen</string>
 </resources>

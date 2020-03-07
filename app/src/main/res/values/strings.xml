@@ -4,4 +4,6 @@
     <string name="Edit">Edit</string>
     <string name="Next">Next</string>
     <string name="Previous">Previous</string>
+    <string name="AddQuestion">Add new question</string>
+    <string name="Add">Add</string>
 </resources>
