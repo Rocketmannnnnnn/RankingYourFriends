@@ -12,12 +12,12 @@ public class DataContainer {
     private String defaultArrayName, customArrayName;
     private ArrayList<String> defaultQuestions;
     private ArrayList<String> customQuestions;
+    private JSONObject obj;
 
     private static final DataContainer INSTANCE = new DataContainer();
 
     private DataContainer(){
-        this.customQuestions = new ArrayList<>();
-        this.defaultQuestions = new ArrayList<>();
+
     }
 
     public static DataContainer getInstance() {
@@ -32,8 +32,9 @@ public class DataContainer {
         return customQuestions;
     }
 
-    public void AddQuestion(String question){
+    public void addQuestion(String question) throws JSONException {
         this.customQuestions.add(question);
+        this.obj.getJSONArray(customArrayName).put(question);
     }
 
     public void init(String defaultArrayName, String customArrayName){
@@ -42,12 +43,13 @@ public class DataContainer {
     }
 
     //Returns the JSON string with default questions
-    public String getDefaultString(){
+    public String getBaseJSON(){
         JSONObject obj = new JSONObject();
 
         JSONArray defaultArray;
         defaultArray = new JSONArray();
         defaultArray.put("Op wiens kinderen zou je absoluut niet willen letten?");
+        defaultArray.put("Wie zou je niet op jouw kinderen laten letten?");
 
         try {
             obj.put(defaultArrayName, defaultArray);
@@ -65,9 +67,11 @@ public class DataContainer {
     }
 
     //Adds the default and custom questions to the DataContainer
-    public void fillData(String sharedPerfs){
+    private void JSONtoArrays(){
+        this.customQuestions = new ArrayList<>();
+        this.defaultQuestions = new ArrayList<>();
+
         try {
-            JSONObject obj = new JSONObject(sharedPerfs);
             JSONArray array = obj.getJSONArray(defaultArrayName);
 
             for (int i = 0; i <  array.length(); i++){
@@ -78,6 +82,19 @@ public class DataContainer {
             for (int i = 0; i < array.length(); i++){
                 this.customQuestions.add(array.getString(i));
             }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public JSONObject getObj() {
+        return obj;
+    }
+
+    public void setObj(String obj) {
+        try {
+            this.obj = new JSONObject(obj);
+            JSONtoArrays();
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -8,4 +8,5 @@
     <string name="Add">Add</string>
     <string name="DEFAULTQUESTIONS" translatable="false">DEFAULTQUESTIONS</string>
     <string name="CUSTOMQUESTIONS" translatable="false">CUSTOMQUESTIONS</string>
+    <string name="QUESTIONS" translatable="false">QUESTIONS</string>
 </resources>

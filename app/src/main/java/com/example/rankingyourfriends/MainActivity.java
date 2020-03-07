@@ -6,20 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView jokeTv;
     private Button playButton;
     private Button editButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
         DataContainer dc = DataContainer.getInstance();
         dc.init(getResources().getString(R.string.DEFAULTQUESTIONS), getResources().getString(R.string.CUSTOMQUESTIONS));
 
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        String questions = sharedPref.getString("questions", dc.getDefaultString());
-
-        dc.fillData(questions);
+        SharedPreferences perfs = getApplicationContext().getSharedPreferences(getResources().getString(R.string.QUESTIONS), Context.MODE_PRIVATE);
+        String questions = perfs.getString(getResources().getString(R.string.QUESTIONS), dc.getBaseJSON());
+        dc.setObj(questions);
+        Log.i("LOAD", questions);
     }
 }

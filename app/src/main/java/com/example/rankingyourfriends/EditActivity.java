@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import org.json.JSONException;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -35,11 +38,28 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String question = newQuestion.getText().toString();
                 if(!DataContainer.getInstance().getCustomQuestions().contains(question)){
-                    DataContainer.getInstance().AddQuestion(question);
-                    //TODO add question to Sharedperfs
+                    Save(question);
                     adapter.notifyDataSetChanged();
                 }
             }
         });
+    }
+
+    private void Save(String question){
+        DataContainer dc = DataContainer.getInstance();
+        try {
+            dc.addQuestion(question);
+
+            SharedPreferences perfs = getApplicationContext().getSharedPreferences(getResources().getString(R.string.QUESTIONS), Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = perfs.edit();
+            editor.putString(getResources().getString(R.string.QUESTIONS), dc.getObj().toString());
+            Log.i("SAVE", dc.getObj().toString());
+            //editor.apply();
+            if(editor.commit()){
+                Log.i("COMMIT", "Save succesfull");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

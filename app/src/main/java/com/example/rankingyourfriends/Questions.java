@@ -3,6 +3,7 @@ package com.example.rankingyourfriends;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class Questions extends AppCompatActivity {
                 index++;
                 index %= questions.size();
                 questionTextView.setText(questions.get(index));
+                Log.i("INDEX", index + "");
             }
         });
 
@@ -51,6 +53,7 @@ public class Questions extends AppCompatActivity {
                     index = questions.size() - 1;
                 }
                 questionTextView.setText(questions.get(index));
+                Log.i("INDEX", index + "");
             }
         });
     }
