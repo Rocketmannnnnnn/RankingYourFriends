@@ -1,6 +1,6 @@
-package com.example.rankingyourfriends;
+package com.example.rankingyourfriends.Logic;
 
-import android.util.JsonReader;
+import com.example.rankingyourfriends.HardCodedQuestions;
 
 import org.json.JSONArray;
 import org.json.JSONException;

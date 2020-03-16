@@ -10,4 +10,9 @@
     <string name="DeleteText">"Weet je zeker dat je deze wilt verwijderen: "</string>
     <string name="Confirm">Bevestig</string>
     <string name="DeleteSuccesfull">Succesvol verwijderd</string>
+    <string name="EnterName">Voer je naam in</string>
+    <string name="EnterRoom">Voer spelkamer in</string>
+    <string name="VotedFor">Je stemde op:</string>
+    <string name="MostVotes">had de meeste stemmen</string>
+    <string name="Result">Resultaat</string>
 </resources>

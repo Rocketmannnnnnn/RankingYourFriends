@@ -1,4 +1,4 @@
-package com.example.rankingyourfriends;
+package com.example.rankingyourfriends.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.rankingyourfriends.Logic.DataContainer;
+import com.example.rankingyourfriends.R;
 
 import org.json.JSONException;
 

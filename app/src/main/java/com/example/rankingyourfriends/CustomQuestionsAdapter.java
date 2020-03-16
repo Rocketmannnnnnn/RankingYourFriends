@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.rankingyourfriends.Activities.DeleteActivity;
+
 import java.util.ArrayList;
 
 public class CustomQuestionsAdapter extends RecyclerView.Adapter<CustomQuestionsAdapter.CQViewHolder> {

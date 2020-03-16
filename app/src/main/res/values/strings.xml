@@ -12,4 +12,10 @@
     <string name="DeleteText">"Are you sure you want to delete: "</string>
     <string name="Confirm">Confirm</string>
     <string name="DeleteSuccesfull">Delete succesfull</string>
+    <string name="EnterName">Enter your name</string>
+    <string name="EnterRoom">Enter gameroom name</string>
+    <string name="Host" translatable="false">Host?</string>
+    <string name="VotedFor">You voted for:</string>
+    <string name="MostVotes">had the most votes</string>
+    <string name="Result">Result</string>
 </resources>
