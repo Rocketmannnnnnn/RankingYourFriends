@@ -53,8 +53,10 @@ public class DataContainer {
 
         JSONArray defaultArray;
         defaultArray = new JSONArray();
-        defaultArray.put("Op wiens kinderen zou je absoluut niet willen letten?");
-        defaultArray.put("Wie zou je niet op jouw kinderen laten letten?");
+
+        for (String s: HardCodedQuestions.getQuestions()) {
+            defaultArray.put(s);
+        }
 
         try {
             obj.put(defaultArrayName, defaultArray);
