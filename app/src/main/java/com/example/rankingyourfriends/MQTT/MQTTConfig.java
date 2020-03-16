@@ -39,6 +39,10 @@ public class MQTTConfig {
         return MQTT_TOPIC;
     }
 
+    public void setMQTT_TOPIC(String topic){
+        this.MQTT_TOPIC = topic;
+    }
+
     public String CLIENT_ID() {
         return CLIENT_ID;
     }
